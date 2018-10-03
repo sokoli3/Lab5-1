@@ -26,7 +26,8 @@ public class BankAccount {
     public double interestRate;
     private double interestEarned;
 
-    public BankAccount(final String name, final BankAccountType accountCategory) {
+    BankAccount(final String name, final BankAccountType accountCategory) {
+        Bank.totalAccounts++;
         ownerName = name;
         accountType = accountCategory;
     }
@@ -42,5 +43,8 @@ public class BankAccount {
     }
     public BankAccountType getAccountType() {
         return accountType;
+    }
+    public void setName(String newName) {
+        ownerName = newName;
     }
 }

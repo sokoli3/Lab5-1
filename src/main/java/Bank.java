@@ -69,13 +69,15 @@ public class Bank {
      * @param amount to transfer
      * @return boolean
      */
+    double newSourceBalance = 0.0;
+    double newDestinationBalance = 0.0;
 
     public boolean transferMoney(final BankAccount source, final BankAccount destination, final double amount) {
-        balance = bankAccount.getBalance();
-        moneyWithdrawn = balance - amount;
-        if (balance < amount || amount <= 0) {
+        if (amount <= 0 || source.equals(0)) {
             return false;
         }
+        newSourceBalance = source.getBalance() - amount;
+        newDestinationBalance = destination.getBalance() + amount;
         return true;
     }
 
@@ -87,9 +89,7 @@ public class Bank {
      */
 
     public void changeOwnerName(final BankAccount bankAccount, final String name) {
-        /*
-         * Implement this function
-         */
+        bankAccount.setName(name);
     }
 
     public static int totalAccounts = 0;
@@ -99,9 +99,8 @@ public class Bank {
      * @return the total number of accounts
      */
     public static int getNumberOfAccount() {
-        /*
-         * Implement this function
-         */
+
+        return totalAccounts;
     }
 
     /**
