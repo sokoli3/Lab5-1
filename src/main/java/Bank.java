@@ -50,9 +50,12 @@ public class Bank {
      * @return boolean
      */
     public boolean depositMoney(final BankAccount bankAccount, final double amount) {
-        /*
-         * Implement this function
-         */
+        balance = bankAccount.getBalance();
+        moneyWithdrawn = balance + amount;
+        if (amount <= 0) {
+            return false;
+        }
+        return true;
     }
 
     /**
@@ -67,11 +70,13 @@ public class Bank {
      * @return boolean
      */
 
-    public boolean transferMoney(final BankAccount source, final BankAccount destination,
-            final double amount) {
-        /*
-         * Implement this function
-         */
+    public boolean transferMoney(final BankAccount source, final BankAccount destination, final double amount) {
+        balance = bankAccount.getBalance();
+        moneyWithdrawn = balance - amount;
+        if (balance < amount || amount <= 0) {
+            return false;
+        }
+        return true;
     }
 
     /**

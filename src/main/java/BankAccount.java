@@ -27,9 +27,8 @@ public class BankAccount {
     private double interestEarned;
 
     public BankAccount(final String name, final BankAccountType accountCategory) {
-        /*
-         * Implement this function
-         */
+        ownerName = name;
+        accountType = accountCategory;
     }
 
     /*
@@ -37,5 +36,11 @@ public class BankAccount {
      */
     public double getBalance() {
         return accountBalance;
+    }
+    public String getName() {
+        return ownerName;
+    }
+    public BankAccountType getAccountType() {
+        return accountType;
     }
 }
