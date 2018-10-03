@@ -20,7 +20,7 @@ public class BankAccount {
     }
 
     private int accountNumber;
-    public BankAccountType accountType;
+    private BankAccountType accountType;
     private double accountBalance;
     private String ownerName;
     public double interestRate;
@@ -35,4 +35,7 @@ public class BankAccount {
     /*
      * Implement getters and setters as appropriate for private variables.
      */
+    public double getBalance() {
+        return accountBalance;
+    }
 }

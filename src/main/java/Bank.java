@@ -9,9 +9,10 @@
  */
 public class Bank {
 
-    public String bankName;
+    private String bankName;
 
-    public Bank() {
+    Bank() {
+
         bankName = "Illini Bank";
     }
 
@@ -25,11 +26,18 @@ public class Bank {
      * @param amount to withdraw (double)
      * @return boolean
      */
+    double moneyWithdrawn = 0.0;
+    double balance = 0.0;
+
     public boolean withdrawMoney(final BankAccount bankAccount, final double amount) {
-        /*
-         * Implement this function
-         */
+        balance = bankAccount.getBalance();
+        moneyWithdrawn = balance - amount;
+        if (balance < amount || amount <= 0) {
+            return false;
+        }
+        return true;
     }
+
 
     /**
      * Deposit money in an account.
